@@ -1,0 +1,39 @@
+{
+  "metadata": {
+    "schemaVersion": "1.0",
+    "importType": "LEX",
+    "importFormat": "JSON"
+  },
+  "resource": {
+    "description": "Yes/No Slot",
+    "name": "YesNo",
+    "version": "1",
+    "enumerationValues": [
+      {
+        "value": "No",
+        "synonyms": [
+          "Nope",
+          "have not",
+          "haven't",
+          "I have not",
+          "I haven't",
+          "I have not been to",
+          "I haven't been to",
+          "I have not been to zoo",
+          "I haven't been to zoo",
+          "I have not been to zoo before",
+          "I haven't been to zoo before"
+        ]
+      },
+      {
+        "value": "Yes",
+        "synonyms": [
+          "have",
+          "Yeap",
+          "Yeah"
+        ]
+      }
+    ],
+    "valueSelectionStrategy": "TOP_RESOLUTION"
+  }
+}

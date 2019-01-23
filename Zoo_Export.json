@@ -1,0 +1,138 @@
+{
+  "metadata": {
+    "schemaVersion": "1.0",
+    "importType": "LEX",
+    "importFormat": "JSON"
+  },
+  "resource": {
+    "name": "Zoo",
+    "version": "3",
+    "fulfillmentActivity": {
+      "type": "ReturnIntent"
+    },
+    "sampleUtterances": [
+      "I go to zoo"
+    ],
+    "slots": [
+      {
+        "sampleUtterances": [],
+        "slotType": "AMAZON.Animal",
+        "slotConstraint": "Required",
+        "valueElicitationPrompt": {
+          "messages": [
+            {
+              "contentType": "PlainText",
+              "content": "What animals can you see in the zoo?"
+            }
+          ],
+          "maxAttempts": 2
+        },
+        "priority": 3,
+        "name": "Animals"
+      },
+      {
+        "sampleUtterances": [],
+        "slotType": "AMAZON.Food",
+        "slotConstraint": "Required",
+        "valueElicitationPrompt": {
+          "messages": [
+            {
+              "contentType": "PlainText",
+              "content": "My favorite animal is monkey! Do you know what monkeys like to eat?"
+            }
+          ],
+          "maxAttempts": 2
+        },
+        "priority": 5,
+        "name": "EatFood"
+      },
+      {
+        "sampleUtterances": [],
+        "slotType": "AMAZON.Animal",
+        "slotConstraint": "Required",
+        "valueElicitationPrompt": {
+          "messages": [
+            {
+              "contentType": "PlainText",
+              "content": "Great! And what is your favorite kind of animal?"
+            }
+          ],
+          "maxAttempts": 2
+        },
+        "priority": 4,
+        "name": "FavoriteAnimal"
+      },
+      {
+        "sampleUtterances": [],
+        "slotType": "YesNo",
+        "slotTypeVersion": "1",
+        "slotConstraint": "Required",
+        "valueElicitationPrompt": {
+          "messages": [
+            {
+              "contentType": "PlainText",
+              "content": "Have you been to the zoo before?"
+            }
+          ],
+          "maxAttempts": 2
+        },
+        "priority": 2,
+        "name": "GoBefore"
+      },
+      {
+        "sampleUtterances": [],
+        "slotType": "AMAZON.WeatherCondition",
+        "slotConstraint": "Required",
+        "valueElicitationPrompt": {
+          "messages": [
+            {
+              "contentType": "PlainText",
+              "content": "Hooray! We are going to the zoo today! What is the weather like today?"
+            }
+          ],
+          "maxAttempts": 2
+        },
+        "priority": 1,
+        "name": "Weather"
+      }
+    ],
+    "dialogCodeHook": {
+      "uri": "arn:aws:lambda:us-east-1:960874792644:function:test-lex",
+      "messageVersion": "1.0"
+    },
+    "slotTypes": [
+      {
+        "description": "Yes/No Slot",
+        "name": "YesNo",
+        "version": "1",
+        "enumerationValues": [
+          {
+            "value": "No",
+            "synonyms": [
+              "Nope",
+              "have not",
+              "haven't",
+              "I have not",
+              "I haven't",
+              "I have not been to",
+              "I haven't been to",
+              "I have not been to zoo",
+              "I haven't been to zoo",
+              "I have not been to zoo before",
+              "I haven't been to zoo before"
+            ]
+          },
+          {
+            "value": "Yes",
+            "synonyms": [
+              "have",
+              "Yeap",
+              "Yeah"
+            ]
+          }
+        ],
+        "valueSelectionStrategy": "TOP_RESOLUTION"
+      }
+    ]
+  }
+}
